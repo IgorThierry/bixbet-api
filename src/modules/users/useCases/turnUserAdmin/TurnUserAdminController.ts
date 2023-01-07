@@ -1,15 +1,15 @@
 import { Request, Response } from 'express';
+import { container } from 'tsyringe';
 
 import { TurnUserAdminUseCase } from './TurnUserAdminUseCase';
 
 class TurnUserAdminController {
-  constructor(private turnUserAdminUseCase: TurnUserAdminUseCase) {}
-
   handle(request: Request, response: Response): Response {
     const { user_id } = request.params;
 
     try {
-      const user = this.turnUserAdminUseCase.execute({ user_id });
+      const turnUserAdminUseCase = container.resolve(TurnUserAdminUseCase);
+      const user = turnUserAdminUseCase.execute({ user_id });
 
       return response.status(201).json(user);
     } catch (err) {

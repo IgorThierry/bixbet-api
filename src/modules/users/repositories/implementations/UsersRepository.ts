@@ -4,18 +4,8 @@ import { IUsersRepository, ICreateUserDTO } from '../IUsersRepository';
 class UsersRepository implements IUsersRepository {
   private users: User[];
 
-  private static INSTANCE: UsersRepository;
-
-  private constructor() {
+  constructor() {
     this.users = [];
-  }
-
-  public static getInstance(): UsersRepository {
-    if (!UsersRepository.INSTANCE) {
-      UsersRepository.INSTANCE = new UsersRepository();
-    }
-
-    return UsersRepository.INSTANCE;
   }
 
   create({ name, email }: ICreateUserDTO): User {

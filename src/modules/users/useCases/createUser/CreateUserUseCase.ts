@@ -1,3 +1,5 @@
+import { injectable, inject } from 'tsyringe';
+
 import { AppError } from '../../../../errors/AppError';
 import { User } from '../../model/User';
 import { IUsersRepository } from '../../repositories/IUsersRepository';
@@ -7,8 +9,12 @@ interface IRequest {
   email: string;
 }
 
+@injectable()
 class CreateUserUseCase {
-  constructor(private usersRepository: IUsersRepository) {}
+  constructor(
+    @inject('UsersRepository')
+    private usersRepository: IUsersRepository,
+  ) {}
 
   execute({ email, name }: IRequest): User {
     const userAlreadyExists = this.usersRepository.findByEmail(email);
