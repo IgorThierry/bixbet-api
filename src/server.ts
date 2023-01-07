@@ -1,8 +1,10 @@
+import 'reflect-metadata';
 import 'dotenv/config';
+
 import express from 'express';
 import swaggerUI from 'swagger-ui-express';
 
-import '@shared/container';
+import './shared/container';
 
 import { appErrorHandler } from './errors/appErrorHandler';
 import { router } from './routes';
