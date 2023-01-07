@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
-import { CreateUserController } from '../modules/users/useCases/createUser/CreateUserController';
-import { ListAllUsersController } from '../modules/users/useCases/listAllUsers/ListAllUsersController';
-import { ShowUserProfileController } from '../modules/users/useCases/showUserProfile/ShowUserProfileController';
-import { TurnUserAdminController } from '../modules/users/useCases/turnUserAdmin/TurnUserAdminController';
+import { CreateUserController } from '../controllers/CreateUserController';
+import { ListAllUsersController } from '../controllers/ListAllUsersController';
+import { ShowUserProfileController } from '../controllers/ShowUserProfileController';
+import { TurnUserAdminController } from '../controllers/TurnUserAdminController';
 
 const usersRoutes = Router();
 

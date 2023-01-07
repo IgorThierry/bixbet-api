@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 
-import { TurnUserAdminUseCase } from './TurnUserAdminUseCase';
+import { TurnUserAdminUseCase } from '../../../useCases/TurnUserAdminUseCase';
 
 class TurnUserAdminController {
   handle(request: Request, response: Response): Response {

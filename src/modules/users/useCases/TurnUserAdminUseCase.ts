@@ -1,15 +1,15 @@
 import { injectable, inject } from 'tsyringe';
 
-import { AppError } from '../../../../errors/AppError';
-import { User } from '../../model/User';
-import { IUsersRepository } from '../../repositories/IUsersRepository';
+import { AppError } from '../../../errors/AppError';
+import { User } from '../entities/User';
+import { IUsersRepository } from '../repositories/IUsersRepository';
 
 interface IRequest {
   user_id: string;
 }
 
 @injectable()
-class ShowUserProfileUseCase {
+class TurnUserAdminUseCase {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
@@ -22,8 +22,10 @@ class ShowUserProfileUseCase {
       throw new AppError('User not found');
     }
 
+    this.usersRepository.turnAdmin(user);
+
     return user;
   }
 }
 
-export { ShowUserProfileUseCase };
+export { TurnUserAdminUseCase };

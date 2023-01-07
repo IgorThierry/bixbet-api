@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 
-import { ShowUserProfileUseCase } from './ShowUserProfileUseCase';
+import { ShowUserProfileUseCase } from '../../../useCases/ShowUserProfileUseCase';
 
 class ShowUserProfileController {
   handle(request: Request, response: Response): Response {
