@@ -5,7 +5,7 @@ import express from 'express';
 import 'express-async-errors';
 import swaggerUI from 'swagger-ui-express';
 
-import './shared/container';
+import '@shared/container';
 
 import { router } from './routes';
 import { appErrorHandler } from './shared/infra/http/middlewares/appErrorHandler';
