@@ -4,17 +4,13 @@ import { container } from 'tsyringe';
 import { CreateUserUseCase } from '../../../useCases/CreateUserUseCase';
 
 class CreateUserController {
-  handle(request: Request, response: Response): Response {
-    const { email, name } = request.body;
+  async handle(request: Request, response: Response) {
+    const { email, name, password } = request.body;
 
-    try {
-      const createUserUseCase = container.resolve(CreateUserUseCase);
-      const user = createUserUseCase.execute({ email, name });
+    const createUserUseCase = container.resolve(CreateUserUseCase);
+    const user = await createUserUseCase.execute({ email, name, password });
 
-      return response.status(201).json(user);
-    } catch (err) {
-      return response.status(400).json({ error: err.message });
-    }
+    return response.status(201).json(user);
   }
 }
 

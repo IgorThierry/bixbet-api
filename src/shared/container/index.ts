@@ -1,9 +1,9 @@
 import { container } from 'tsyringe';
 
-import { InMemoryUsersRepository } from '@modules/users/repositories/fakes/InMemoryUsersRepository';
+import { PrismaUsersRepository } from '@modules/users/infra/prisma/repositories/PrismaUsersRepository';
 import { IUsersRepository } from '@modules/users/repositories/IUsersRepository';
 
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
-  InMemoryUsersRepository,
+  PrismaUsersRepository,
 );

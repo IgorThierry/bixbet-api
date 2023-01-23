@@ -1,16 +1,10 @@
+import { ICreateUserDTO } from '../dtos/ICreateUserDTO';
 import { User } from '../entities/User';
 
-interface ICreateUserDTO {
-  name: string;
-  email: string;
-}
-
 interface IUsersRepository {
-  create({ name, email }: ICreateUserDTO): User;
-  findById(id: string): User | undefined;
-  findByEmail(email: string): User | undefined;
-  turnAdmin(user: User): User;
-  list(): User[];
+  create({ name, email, password }: ICreateUserDTO): Promise<User>;
+  findById(id: string): Promise<User | undefined>;
+  findByEmail(email: string): Promise<User | undefined>;
 }
 
 export { IUsersRepository, ICreateUserDTO };
