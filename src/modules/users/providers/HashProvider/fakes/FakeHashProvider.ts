@@ -9,4 +9,4 @@ class FakeHashProvider implements IHashProvider {
   }
 }
 
-export default FakeHashProvider;
+export { FakeHashProvider };

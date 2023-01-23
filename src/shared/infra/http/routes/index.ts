@@ -1,5 +1,6 @@
 import { Router } from 'express';
 
+import { sessionsRoutes } from '@modules/users/infra/http/routes/sessions.routes';
 import { usersRoutes } from '@modules/users/infra/http/routes/users.routes';
 
 const router = Router();
@@ -9,5 +10,6 @@ router.get('/', (request, response) => {
 });
 
 router.use(usersRoutes);
+router.use(sessionsRoutes);
 
 export { router };

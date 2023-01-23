@@ -6,13 +6,20 @@ import {
   IRequest,
 } from '@modules/users/useCases/CreateUserUseCase';
 
+import { FakeHashProvider } from '../providers/HashProvider/fakes/FakeHashProvider';
+
 let createUserUseCase: CreateUserUseCase;
 let inMemoryUsersRepository: InMemoryUsersRepository;
+let fakeHashProvider: FakeHashProvider;
 
 describe('Create User', () => {
   beforeAll(() => {
     inMemoryUsersRepository = new InMemoryUsersRepository();
-    createUserUseCase = new CreateUserUseCase(inMemoryUsersRepository);
+    fakeHashProvider = new FakeHashProvider();
+    createUserUseCase = new CreateUserUseCase(
+      inMemoryUsersRepository,
+      fakeHashProvider,
+    );
   });
 
   it('should be able to create a new user', async () => {
