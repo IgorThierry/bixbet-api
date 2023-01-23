@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "scripts": {
     "dev": "cross-env NODE_ENV=development ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn --exit-child src/shared/infra/http/server.ts",
     "lint": "eslint src --ext ts,tsx",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "prisma": {
+    "schema": "shared/infra/prisma/schema.prisma"
+  },
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
