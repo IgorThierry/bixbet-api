@@ -39,7 +39,7 @@ $ npm i
 Inicie o projeto;
 
 ```
-$ npm run dev
+$ docker-compose up
 ```
 
 ## 🚀 **Em constante evolução...**
