@@ -8,6 +8,6 @@ router.get('/', (request, response) => {
   return response.json({ message: 'Hello World' });
 });
 
-router.use('/users', usersRoutes);
+router.use(usersRoutes);
 
 export { router };

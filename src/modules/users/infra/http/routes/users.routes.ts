@@ -12,12 +12,12 @@ const turnUserAdminController = new TurnUserAdminController();
 const showUserProfileController = new ShowUserProfileController();
 const listAllUsersController = new ListAllUsersController();
 
-usersRoutes.post('/', createUserController.handle);
+usersRoutes.post('/users', createUserController.handle);
 
-usersRoutes.patch('/:user_id/admin', turnUserAdminController.handle);
+usersRoutes.patch('/users/:user_id/admin', turnUserAdminController.handle);
 
-usersRoutes.get('/:user_id', showUserProfileController.handle);
+usersRoutes.get('/users/:user_id', showUserProfileController.handle);
 
-usersRoutes.get('/', listAllUsersController.handle);
+usersRoutes.get('/users', listAllUsersController.handle);
 
 export { usersRoutes };
