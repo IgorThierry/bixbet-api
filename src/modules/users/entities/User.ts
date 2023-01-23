@@ -5,7 +5,7 @@ class User {
   name: string;
   email: string;
   password: string;
-  createdAt?: Date;
+  createdAt: Date;
 
   constructor() {
     if (!this.id) {

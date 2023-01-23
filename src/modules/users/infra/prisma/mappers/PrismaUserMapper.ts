@@ -16,6 +16,8 @@ export class PrismaUserMapper {
   static toDomain(raw: RawUser): User {
     const user = new User();
 
+    user.id = raw.id;
+    user.createdAt = raw.createdAt;
     user.name = raw.name;
     user.email = raw.email;
     user.password = raw.password;
