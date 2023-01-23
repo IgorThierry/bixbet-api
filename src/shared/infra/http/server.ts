@@ -7,9 +7,10 @@ import swaggerUI from 'swagger-ui-express';
 
 import '@shared/container';
 
-import { router } from './routes';
-import { appErrorHandler } from './shared/infra/http/middlewares/appErrorHandler';
-import swaggerFile from './swagger.json';
+import { appErrorHandler } from '@shared/infra/http/middlewares/appErrorHandler';
+import { router } from '@shared/infra/http/routes';
+
+import swaggerFile from '../../../swagger.json';
 
 const app = express();
 
